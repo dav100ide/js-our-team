@@ -43,7 +43,11 @@ const team = [
    },
 ];
 
+const teamList = document.getElementById('team-list');
+
 for (let i = 0; i < team.length; i++) {
-   const teamMember = team[i];
-   console.log(teamMember);
+   const teamMember = JSON.stringify(team[i]);
+   const newLi = document.createElement('li');
+   newLi.innerHTML = teamMember;
+   teamList.append(newLi);
 }
