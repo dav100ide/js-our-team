@@ -45,9 +45,30 @@ const team = [
 
 const teamList = document.getElementById('team-list');
 
+// for (let i = 0; i < team.length; i++) {
+//    const teamMember = JSON.stringify(team[i]);
+//    const newLi = document.createElement('li');
+//    newLi.innerHTML = teamMember;
+//    teamList.append(newLi);
+// }
+
+// for (let i = 0; i < team.length; i++) {
+//    const teamMember = team[i];
+//    for (let key in teamMember) {
+//       console.log(key, teamMember[key]);
+//    }
+// }
+
 for (let i = 0; i < team.length; i++) {
-   const teamMember = JSON.stringify(team[i]);
-   const newLi = document.createElement('li');
-   newLi.innerHTML = teamMember;
-   teamList.append(newLi);
+   const teamMember = team[i];
+   const listItem = `
+   <li>
+   <h3>${teamMember.fristname}</h3>
+   <p>${teamMember.role}</p>
+   <div class="photo">
+      ${teamMember.photo}
+   </div>
+   </li>
+   `;
+   teamList.innerHTML += listItem;
 }
